@@ -1,2 +1,19 @@
 {
-	"name": "hightem
+	"name": "hightemplerbot",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/dogun1228/HighTemplerBot.git"
+	},
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/dogun1228/HighTemplerBot/issues"
+	},
+	"homepage": "https://github.com/dogun1228/HighTemplerBot#readme"
+}
