@@ -18,6 +18,8 @@
 	},
 	"homepage": "https://github.com/dogun1228/HighTemplerBot#readme",
 	"dependencies": {
-		"discord.js": "^11.5.0"
+		"discord.js": "^11.5.0",
+		"request": "^2.88.0",
+		"request-promise-native": "^1.0.7"
 	}
 }
