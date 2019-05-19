@@ -27,21 +27,28 @@ commands.set('한강수온', async function(msg) {
 	)
 })
 
-commands.set('색깔', function(msg) {
+commands.set('색깔', msg => {
 	const colorcode = msg.content
 		.replace(config.prefix, '')
 		.split(' ')
 		.slice(1)
 		.join('')
 
-	console.log(colorcode)
-
 	const colors = [colorcode.slice(0, 2), colorcode.slice(2, 4), colorcode.slice(4, 6)].map(color =>
 		Number('0x' + color)
 	)
 
-	console.log(colors)
 	msg.channel.send(new Discord.RichEmbed().setTitle('<<당신이 고른 색!').setColor(colors))
+})
+
+commands.set('dice', msg => {
+	const dice = msg.content
+		.replace(config.prefix, '')
+		.split(' ')
+		.slice(1)
+		.shift()
+
+	msg.channel.send(dice)
 })
 
 module.exports = commands
