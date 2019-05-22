@@ -25,6 +25,16 @@ client.on('message', msg => {
 		msg.channel.send(embed)
 		return
 	}
+	if (msg.content === '상상도 못한 정체') {
+		const embed = new Discord.RichEmbed()
+			.setTitle('ㄴㅇㄱ')
+			.setColor(0xff007f)
+			.setImage(
+				'https://user-images.githubusercontent.com/10864343/58185286-c1add880-7ced-11e9-8c3e-b936578ace42.png'
+			)
+		msg.channel.send(embed)
+		return
+	}
 
 	if (!msg.content.startsWith(config.prefix)) return
 

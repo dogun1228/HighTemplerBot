@@ -4,6 +4,10 @@ const request = require('request-promise-native')
 
 const commands = new Map()
 
+function getRandom(min, max) {
+	return Math.round(Math.random() * (max - min)) + min
+}
+
 commands.set('ping', msg => {
 	msg.channel.send('pong!')
 })
@@ -47,8 +51,27 @@ commands.set('dice', msg => {
 		.split(' ')
 		.slice(1)
 		.shift()
+		.split('d')
+		.map(Number)
 
-	msg.channel.send(dice)
+	if (!(dice[0] && dice[1])) {
+		msg.channel.send('입력이 잘못되었습니다.')
+		return
+	}
+
+	msg.channel.send(`${dice[0]}d${dice[1]}의 결과는...!`)
+
+	let sum = 0
+	let text = ''
+
+	Array.from(Array(dice[0]).keys()).forEach(i => {
+		let num = getRandom(1, dice[1])
+		text += `${i + 1}번째 d${dice[1]} = ${num}\n`
+		sum += num
+	})
+
+	msg.channel.send(text)
+	msg.channel.send(`총합 : ${sum}`)
 })
 
 module.exports = commands
